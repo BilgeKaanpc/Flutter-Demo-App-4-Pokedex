@@ -26,20 +26,24 @@ class _PokemonListState extends State<PokemonList> {
       future: _pokemonList,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
+          // ignore: no_leading_underscores_for_local_identifiers
           List<PokemonModel> _myList = snapshot.data!;
 
           return GridView.builder(
+            itemCount: _myList.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount:
                     ScreenUtil().orientation == Orientation.portrait ? 2 : 3),
-            itemBuilder: (context, index) => PokeListItem(
-              pokemon: _myList[index],
-            ),
+            itemBuilder: (context, index) {
+              return PokeListItem(
+                pokemon: _myList[index],
+              );
+            },
           );
         } else if (snapshot.hasError) {
           return Container();
         } else {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         }

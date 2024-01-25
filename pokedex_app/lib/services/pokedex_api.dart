@@ -6,6 +6,7 @@ class PokeApi{
   static const String _url = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json";
 
   static Future<List<PokemonModel>> getPokemonData() async{
+    // ignore: no_leading_underscores_for_local_identifiers
     List<PokemonModel> _list = [];
 
   var result = await Dio().get(_url);
