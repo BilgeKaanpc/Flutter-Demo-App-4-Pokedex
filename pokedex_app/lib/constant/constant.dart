@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Constants {
   Constants._();
 
-  static const String title = "Pokedex Bilge";
+  static const String title = "Pokedex";
   static TextStyle getTitleStyle() {
     return TextStyle(
       color: Colors.white,
